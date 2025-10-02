@@ -1,526 +1,270 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  background-color: black;
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
+/* ---------- Base ---------- */
+@layer base {
+  * { @apply m-0 p-0 box-border; }
 
-.navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 3% 5%;
-  z-index: 10;
-}
-
-.navbar__brand {
-  width: 100px;
-  height: 100%;
-}
-
-.brand__logo {
-  width: 100%;
-  height: 100%;
-}
-
-.language__drop__down {
-  background: transparent;
-  border: none;
-  color: white;
-}
-
-.language__drop__down:focus {
-  outline: none;
-}
-
-.language__drop__down option {
-  background-color: black;
-}
-
-.dropdown__container {
-  border: 1px solid white;
-  padding: 0.4rem;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.signin__button {
-  background-color: #dc030f;
-  border: 1px solid #dc030f;
-  color: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.navbar__nav__items {
-  display: flex;
-  gap: 10px;
-}
-
-.hero__bg__image__container {
-  width: 100%;
-  height: 80vh;
-}
-
-.hero__bg__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero__bg__overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 80vh;
-  background: rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0,
-    rgba(0, 0, 0, 0) 60%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-}
-
-.hero__card {
-  position: absolute;
-  top: 20%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero__title {
-  font-weight: 600;
-  font-size: 2rem;
-}
-
-.hero__subtitle,
-.hero__description {
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.hero__description {
-  margin: 0 50px;
-}
-
-.email__input {
-  border: none;
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  padding-left: 7px;
-}
-.email__label {
-  color: black;
-  position: absolute;
-  top: 28%;
-  left: 2%;
-  color: rgb(153, 149, 149);
-  transition: 0.5s;
-}
-
-.email__form__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.form__container {
-  background-color: white;
-  width: 90%;
-  height: 50px;
-  position: relative;
-}
-
-.email__input:focus + .email__label {
-  top: 0.2rem;
-  font-size: 10px;
-}
-
-.email__input:not(:placeholder-shown).email__input:not(:focus) + .email__label {
-  top: 0.2rem;
-  font-size: 10px;
-}
-
-.email__input:focus-visible {
-  outline: none;
-}
-
-.primary__button {
-  background-color: #dc030f;
-  border: 1px solid #dc030f;
-  color: white;
-  padding: 0.8rem 1.2rem;
-  border-radius: 2px;
-  font-size: 15px;
-  letter-spacing: 1px;
-}
-
-.feature {
-  border-top: 8px solid #222;
-  padding: 2rem 1rem;
-}
-
-.feature__details {
-  text-align: center;
-}
-
-.feature__title {
-  font-size: 25px;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.feature__sub__title {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.feature__image__container {
-  width: 100%;
-  position: relative;
-}
-.feature__image {
-  width: 100%;
-}
-
-.feature__backgroud__video__container {
-  position: absolute;
-  width: 100%;
-  top: 20%;
-  left: 13%;
-  height: 100%;
-  max-width: 73%;
-  max-height: 54%;
-  z-index: -2;
-}
-
-.feature__backgroud__video {
-  width: 100%;
-}
-
-.feature__2__poster__container {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 16em;
-  display: flex;
-  align-items: center;
-  background-color: black;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  height: 60px;
-  padding: 0.25rem 0.6rem;
-  gap: 15px;
-}
-
-.poster__container {
-  width: 20%;
-}
-
-.poster {
-  width: 100%;
-  height: 100%;
-}
-.poster__details {
-  width: 60%;
-}
-.poster__details > h4 {
-  font-size: 13px;
-  font-weight: 500;
-}
-.poster__details > h6 {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgb(63, 63, 246);
-}
-
-.download__gif__container {
-  width: 20%;
-  height: 100%;
-}
-.gif {
-  width: 100%;
-  height: 100%;
-}
-
-.feature__3__backgroud__video__container {
-  max-width: 63%;
-  max-height: 47%;
-  z-index: -2;
-  top: 9%;
-  left: 19%;
-}
-
-.FAQ__accordian {
-  width: 100%;
-}
-.FAQ__title {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  font-size: 18px;
-  background-color: #303030;
-  border: 1px solid #303030;
-  color: white;
-}
-
-.FAQ__visible {
-  background-color: #303030;
-  border-top: 1px solid black;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.FAQ__visible > p {
-  margin: 1rem;
-}
-.FAQ__list__container {
-  border-top: 8px solid #222;
-  padding: 2rem 0;
-}
-.FAQ__heading {
-  font-size: 20px;
-  text-align: center;
-  font-weight: 600;
-  margin: 1rem 3rem;
-}
-
-.FAQ__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.FAQ__get__started__email {
-  text-align: center;
-}
-
-.FAQ__get__started__email > h3 {
-  font-size: 18px;
-  font-weight: 400;
-  margin: 2rem 0;
-}
-
-footer {
-  border-top: 8px solid #333;
-  padding: 2rem 1rem;
-  color: #757575;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.footer__row__2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.footer__row__1 > h4 {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.footer__row__3 > .dropdown__container {
-  width: fit-content;
-  border: 1px solid #757575;
-  color: #757575;
-}
-
-.footer__row__3 > .dropdown__container > .language__drop__down {
-  color: #757575;
-}
-
-@media (min-width: 768px) {
-  .hero__bg__image__container {
-    height: 100vh;
-  }
-
-  .hero__bg__overlay {
-    height: 100vh;
-  }
-  .hero__card {
-    top: 40%;
-    left: 30%;
-    transform: translate(-20%, -20%);
-  }
-  .hero__title {
-    font-size: 3rem;
-  }
-  .hero__subtitle,
-  .hero__description {
-    font-size: 1.3rem;
-  }
-
-  .feature {
-    padding: 4rem;
-  }
-
-  .feature__title {
-    font-size: 35px;
-  }
-
-  .feature__sub__title {
-    font-size: 20px;
-  }
-  .feature__2__poster__container {
-    max-width: 26em;
-    height: 85px;
-  }
-  .poster__container {
-    width: 15%;
-  }
-  .download__gif__container {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .poster__details > h4 {
-    font-size: 18px;
-  }
-  .poster__details > h6 {
-    font-size: 14px;
-  }
-  .FAQ__title {
-    font-size: 20px;
-  }
-  .FAQ__heading {
-    font-size: 38px;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-  .FAQ__list {
-    padding: 1rem 5rem;
-  }
-  .FAQ__get__started__email {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translateX(15%);
+  body {
+    @apply bg-black text-white font-[Poppins] overflow-x-hidden;
   }
 }
 
-@media (min-width: 1024px) {
+/* ---------- Components ---------- */
+@layer components {
+  /* Navbar */
   .navbar {
-    padding: 2% 5%;
+    @apply absolute top-0 w-full flex justify-between z-10 px-[5%] py-[3%]
+           transition-all duration-300;
+  }
+  @media (min-width: 1024px) {
+    .navbar { @apply py-[2%] px-[5%]; }
+  }
+  .navbar__brand { @apply w-[100px] h-full lg:w-[150px]; }
+  .brand__logo { @apply w-full h-full; }
+
+  .navbar__nav__items { @apply flex gap-2.5 lg:gap-7; }
+
+  .dropdown__container {
+    @apply border border-white/100 rounded bg-black/40 px-2 py-1
+           lg:px-1.5 lg:py-2 text-sm transition-colors duration-200;
   }
 
-  .navbar__brand {
-    width: 150px;
+  .language__drop__down {
+    @apply bg-transparent border-0 text-white focus:outline-none;
   }
+  .language__drop__down option { background-color: #000; }
 
   .signin__button {
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-  .dropdown__container {
-    padding: 10px 5px;
+    @apply bg-[#dc030f] border border-[#dc030f] text-white
+           rounded px-2 py-1 lg:px-5 lg:py-2 text-sm lg:text-lg
+           shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0
+           transition-all duration-200;
   }
 
-  .navbar__nav__items {
-    gap: 30px;
+  /* Hero */
+  .hero__bg__image__container { @apply w-full h-[80vh] md:h-screen relative; }
+  .hero__bg__image { @apply w-full h-full object-cover; }
+
+  .hero__bg__overlay {
+    @apply absolute inset-0 w-full h-[80vh] md:h-screen;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.8) 0%,
+      rgba(0,0,0,0) 60%,
+      rgba(0,0,0,0.8) 100%
+    );
   }
 
   .hero__card {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @apply absolute top-[20%] md:top-[40%] lg:top-1/2 lg:left-1/2
+           lg:-translate-x-1/2 lg:-translate-y-1/2
+           text-center flex flex-col gap-2.5;
+    /* Reveal on load */
+    @apply motion-safe:animate-[rise_700ms_ease-out_forwards];
+    opacity: 0;
+  }
+
+  .hero__title { @apply font-semibold text-2xl md:text-3xl lg:text-5xl; }
+  .hero__subtitle,
+  .hero__description { @apply font-normal text-base md:text-xl; }
+  .hero__description { @apply mx-[50px]; }
+
+  /* Email form */
+  .email__form__container {
+    @apply flex flex-col items-center justify-center gap-4
+           lg:flex-row lg:items-center lg:gap-[4px];
   }
 
   .form__container {
-    width: 50%;
-  }
-  .email__form__container {
-    flex-direction: row;
-    align-items: center;
-    gap: 1px;
-  }
-  .primary__button {
-    height: 50px;
+    @apply bg-white relative w-[90%] h-[50px] lg:w-1/2;
   }
 
-  .feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+  .email__input {
+    @apply border-0 bg-transparent w-full h-full pl-2 text-black
+           focus:outline-none;
   }
+
+  .email__label {
+    @apply absolute left-[2%] top-[28%] text-[rgb(153,149,149)]
+           transition-all duration-500 pointer-events-none;
+  }
+
+  /* Floating label states */
+  .email__input:focus + .email__label,
+  .email__input:not(:placeholder-shown).email__input:not(:focus) + .email__label {
+    @apply top-1 text-[10px];
+  }
+
+  .primary__button {
+    @apply bg-[#dc030f] border border-[#dc030f] text-white
+           px-5 py-3 rounded text-[15px] tracking-wider h-[50px]
+           shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0
+           transition-all duration-200;
+  }
+
+  /* Features */
+  .feature {
+    @apply border-t-[8px] border-[#222] p-4 md:p-16
+           lg:flex lg:items-center lg:justify-between lg:gap-5;
+  }
+  .feature:nth-child(even) { @apply lg:flex-row-reverse; }
 
   .feature__details {
-    text-align: left;
-    padding: 0 6rem;
+    @apply text-center lg:text-left lg:px-24;
   }
 
   .feature__title {
-    font-size: 50px;
+    @apply text-[25px] font-semibold my-2.5
+           md:text-[35px] lg:text-[50px]
+           motion-safe:animate-[fade-in_700ms_ease-out_both];
   }
 
   .feature__sub__title {
-    font-size: 25px;
+    @apply text-[15px] font-normal md:text-[20px] lg:text-[25px]
+           text-white/90;
   }
 
   .feature__image__container {
-    max-width: 500px;
+    @apply w-full relative lg:max-w-[500px];
   }
+  .feature__image { @apply w-full; }
 
-  .feature:nth-child(even) {
-    flex-direction: row-reverse;
+  .feature__backgroud__video__container {
+    @apply absolute w-full top-[20%] left-[13%] h-full
+           max-w-[73%] max-h-[54%] -z-[2];
   }
+  .feature__backgroud__video { @apply w-full; }
 
   .feature__2__poster__container {
-    max-width: 20em;
-    height: 100px;
-    padding: 1rem;
-  }
-  .poster__container {
-    width: 20%;
-  }
-  .FAQ__list {
-    padding: 1rem 25rem;
-  }
-  .FAQ__get__started__email {
-    transform: translateX(16%);
-  }
-  footer {
-    padding: 2rem 20rem;
-    justify-content: flex-start;
-    text-align: left;
-    align-items: flex-start;
+    @apply absolute bottom-[8%] left-1/2 -translate-x-1/2 w-full
+           max-w-[16em] md:max-w-[26em] lg:max-w-[20em]
+           flex items-center bg-black border border-white/25
+           rounded-[10px] h-[60px] md:h-[85px] lg:h-[100px]
+           px-2 py-1.5 md:p-4 gap-4
+           shadow-[0_10px_25px_rgba(0,0,0,0.5)]
+           motion-safe:animate-[floaty_6s_ease-in-out_infinite];
   }
 
+  .poster__container { @apply w-[20%] md:w-[15%] lg:w-[20%]; }
+  .poster { @apply w-full h-full; }
+
+  .poster__details { @apply w-[60%]; }
+  .poster__details>h4 { @apply text-[13px] md:text-[18px] font-medium; }
+  .poster__details>h6 { @apply text-[12px] md:text-sm font-normal text-[rgb(63,63,246)]; }
+
+  .download__gif__container { @apply w-[20%] h-full md:w-12 md:h-12; }
+  .gif { @apply w-full h-full; }
+
+  .feature__3__backgroud__video__container {
+    @apply max-w-[63%] max-h-[47%] -z-[2] top-[9%] left-[19%];
+  }
+
+  /* FAQ */
+  .FAQ__list__container { @apply border-t-[8px] border-[#222] py-8; }
+  .FAQ__heading {
+    @apply text-[20px] font-semibold text-center my-4 mx-12
+           md:text-[38px] md:font-medium tracking-[1px];
+  }
+
+  .FAQ__list {
+    @apply flex flex-col justify-center items-center gap-2.5
+           md:px-20 lg:px-[25rem];
+  }
+
+  .FAQ__accordian { @apply w-full; }
+  .FAQ__title {
+    @apply w-full flex justify-between text-[18px] md:text-[20px]
+           px-5 py-3 bg-[#303030] border border-[#303030] text-white
+           rounded hover:bg-[#3a3a3a] transition-colors duration-200;
+  }
+
+  .FAQ__visible {
+    @apply bg-[#303030] border-t border-black overflow-hidden
+           max-h-0 transition-[max-height] duration-500 ease-in-out;
+  }
+  .FAQ__visible>p { @apply m-4; }
+
+  .FAQ__get__started__email {
+    @apply text-center md:w-3/4 md:flex md:flex-col md:justify-center md:translate-x-[15%]
+           lg:translate-x-[16%];
+  }
+  .FAQ__get__started__email>h3 {
+    @apply text-[18px] font-normal my-8;
+  }
+
+  /* Footer */
+  footer {
+    @apply border-t-[8px] border-[#333] text-[#757575]
+           p-4 md:p-8 lg:py-8 lg:px-[20rem]
+           flex flex-col gap-5 lg:justify-start lg:text-left lg:items-start;
+  }
+
+  .footer__row__1>h4 { @apply text-[15px] font-medium; }
+
   .footer__row__2 {
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    @apply flex flex-wrap justify-around gap-5
+           lg:justify-between lg:items-start lg:flex-nowrap;
+  }
+
+  .footer__row__3>.dropdown__container {
+    @apply w-fit border border-[#757575] text-[#757575];
+  }
+  .footer__row__3>.dropdown__container>.language__drop__down {
+    @apply text-[#757575];
   }
 
   .footer__row__1,
   .footer__row__3,
-  .footer__row__4 {
-    align-self: flex-start;
+  .footer__row__4 { @apply self-start; }
+}
+
+/* ---------- Utilities & Animations ---------- */
+@layer utilities {
+  /* FAQ expand helper: add .is-open to the wrapper to animate height */
+  .FAQ__visible.is-open { max-height: 500px; }
+
+  /* Motion-safe animations */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes floaty {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Fancy hover reveals for cards/links if you add .hover-lift */
+  .hover-lift {
+    @apply transition-transform duration-200 will-change-transform;
+  }
+  .hover-lift:hover { transform: translateY(-4px); }
+
+  /* Subtle focus ring utility (use on interactive elements) */
+  .ring-focus {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+  }
+
+  /* Smooth FAQ icon rotation helper (add to chevron) */
+  .rotate-toggle { @apply transition-transform duration-300; }
+  .rotate-toggle.is-open { transform: rotate(180deg); }
+}
+
+/* ---------- Responsive tweaks that don't need @apply ---------- */
+@media (min-width: 768px) {
+  /* Already converted above; retained here only where explicit px were needed */
+}
+
+@media (min-width: 1024px) {
+  /* Layout handled via component layer */
 }
 
 @media (min-width: 1254px) {
+  /* Reserved for future large-screen refinements */
 }
